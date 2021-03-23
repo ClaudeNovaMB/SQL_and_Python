@@ -15,8 +15,8 @@ CREATE TABLE "bitmexLOB" (
     BidPrice NUMERIC,
     BidPrice NUMERIC,
     bidSize INTEGER NOT NULL,
-    PRIMARY KEY (tstamp, symbol_id)
-    CONSTRAINT fk_dLOB FOREIGN KEY (symbol_id) REFERENCES digitalAssets(id)
+    PRIMARY KEY (tstamp, symbol_id),
+    CONSTRAINT fk_dLOB FOREIGN KEY (symbol_id) REFERENCES digitalAssets(id),
 );
 
 DROP TABLE IF EXISTS "bitmexTrades";
@@ -30,8 +30,8 @@ CREATE TABLE "bitmexTrades" (
     gross INTEGER NOT NULL,
     hNotional NUMERIC,
     fNotional NUMERIC
-    PRIMARY KEY (tstamp, symbol_id)
-    CONSTRAINT fk_dTrade FOREIGN KEY (symbol_id) REFERENCES digitalAssets(id)
+    PRIMARY KEY (tstamp, symbol_id),
+    CONSTRAINT fk_dTrade FOREIGN KEY (symbol_id) REFERENCES digitalAssets(id),
 );
 
 -- Builds binary trees on the symbol to speed up searches. 
