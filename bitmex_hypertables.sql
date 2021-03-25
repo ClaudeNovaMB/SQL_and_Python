@@ -12,7 +12,7 @@ CREATE TABLE "bitmexLOB" (
     tstamp TIMESTAMP WITHOUT TIME ZONE NOT NULL,
     symbol_id TEXT NOT NULL,
     bidSize INTEGER NOT NULL,
-    BidPrice NUMERIC,
+    bidPrice NUMERIC,
     askPrice NUMERIC,
     askSize INTEGER NOT NULL,
     PRIMARY KEY (tstamp, symbol_id),
