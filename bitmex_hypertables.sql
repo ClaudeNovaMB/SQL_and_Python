@@ -13,8 +13,8 @@ CREATE TABLE "bitmexLOB" (
     symbol_id TEXT NOT NULL,
     bidSize INTEGER NOT NULL,
     BidPrice NUMERIC,
-    BidPrice NUMERIC,
-    bidSize INTEGER NOT NULL,
+    askPrice NUMERIC,
+    askSize INTEGER NOT NULL,
     PRIMARY KEY (tstamp, symbol_id),
     CONSTRAINT fk_dLOB FOREIGN KEY (symbol_id) REFERENCES digitalAssets(id)
 );
