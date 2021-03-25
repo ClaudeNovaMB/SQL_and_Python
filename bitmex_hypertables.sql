@@ -29,7 +29,7 @@ CREATE TABLE "bitmexTrades" (
     tDirection TEXT NOT NULL,
     gross INTEGER NOT NULL,
     hNotional NUMERIC,
-    fNotional NUMERIC
+    fNotional NUMERIC,
     PRIMARY KEY (tstamp, symbol_id),
     CONSTRAINT fk_dTrade FOREIGN KEY (symbol_id) REFERENCES digitalAssets(id)
 );
