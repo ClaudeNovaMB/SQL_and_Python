@@ -36,8 +36,8 @@ CREATE TABLE "bitmexTrades" (
 
 -- Builds binary trees on the symbol to speed up searches. 
 -- Not too useful here as the symbol is a primary key and indexed already (showcasing an optimisation)
-CREATE INDEX ON bitmexLOB (symbol_id, tstamp DESC);
-CREATE INDEX ON bitmexTrades (symbol_id, tstamp DESC);
+CREATE INDEX ON "bitmexLOB" (symbol_id, tstamp DESC);
+CREATE INDEX ON "bitmexTrades" (symbol_id, tstamp DESC);
 
 -- TimeScaleDB conversion 
 SELECT create_hypertable('bitmexLOB', 'tstamp');
