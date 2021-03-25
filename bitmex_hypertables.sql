@@ -3,9 +3,8 @@
 
 DROP TABLE IF EXISTS "digitalAssets";
 CREATE TABLE "digitalAssets" (
-    id SERIAL,
-    symbol TEXT NOT NULL,
-    PRIMARY KEY (id, symbol)
+    id SERIAL PRIMARY KEY,
+    symbol TEXT NOT NULL
 );
 
 DROP TABLE IF EXISTS "bitmexLOB";
@@ -17,7 +16,7 @@ CREATE TABLE "bitmexLOB" (
     askPrice NUMERIC,
     askSize INTEGER NOT NULL,
     PRIMARY KEY (tstamp, symbol_id),
-    CONSTRAINT fk_dLOB FOREIGN KEY (symbol_id) REFERENCES "digitalAssets" (symbol)
+    CONSTRAINT fk_dLOB FOREIGN KEY (symbol_id) REFERENCES "digitalAssets" (id)
 );
 
 DROP TABLE IF EXISTS "bitmexTrades";
@@ -32,7 +31,7 @@ CREATE TABLE "bitmexTrades" (
     hNotional NUMERIC,
     fNotional NUMERIC,
     PRIMARY KEY (tstamp, symbol_id),
-    CONSTRAINT fk_dTrade FOREIGN KEY (symbol_id) REFERENCES "digitalAssets" (symbol)
+    CONSTRAINT fk_dTrade FOREIGN KEY (symbol_id) REFERENCES "digitalAssets" (id)
 );
 
 -- Builds binary trees on the symbol to speed up searches. 
