@@ -10,7 +10,7 @@ CREATE TABLE "digitalAssets" (
 DROP TABLE IF EXISTS "bitmexLOB";
 CREATE TABLE "bitmexLOB" (
     tstamp TIMESTAMP WITHOUT TIME ZONE NOT NULL,
-    symbol_id TEXT NOT NULL,
+    symbol_id INTEGER NOT NULL,
     bidSize INTEGER NOT NULL,
     bidPrice NUMERIC,
     askPrice NUMERIC,
@@ -22,7 +22,7 @@ CREATE TABLE "bitmexLOB" (
 DROP TABLE IF EXISTS "bitmexTrades";
 CREATE TABLE "bitmexTrades" (
     tstamp TIMESTAMP WITHOUT TIME ZONE NOT NULL,
-    symbol_id TEXT NOT NULL,
+    symbol_id INTEGER NOT NULL,
     side TEXT NOT NULL,
     size INTEGER NOT NULL,
     price NUMERIC,
