@@ -3,8 +3,9 @@
 
 DROP TABLE IF EXISTS "digitalAssets";
 CREATE TABLE "digitalAssets" (
-    id SERIAL PRIMARY KEY,
-    symbol TEXT NOT NULL
+    id SERIAL,
+    symbol TEXT NOT NULL,
+    PRIMARY KEY (id, symbol)
 );
 
 DROP TABLE IF EXISTS "bitmexLOB";
