@@ -40,6 +40,6 @@ CREATE INDEX ON bitmex_lob (symbol_id, tstamp DESC);
 CREATE INDEX ON bitmex_trades (symbol_id, tstamp DESC);
 
 -- TimeScaleDB conversion 
-SELECT create_hypertable(bitmex_lob, 'tstamp');
-SELECT create_hypertable(bitmex_trades, 'tstamp');
+SELECT create_hypertable('bitmex_lob', 'tstamp');
+SELECT create_hypertable('bitmex_trades', 'tstamp');
 
