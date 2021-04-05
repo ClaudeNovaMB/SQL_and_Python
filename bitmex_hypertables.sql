@@ -1,6 +1,11 @@
 -- This is a Postgres database using TimeScale DB optimisations for timeseries data
 -- Please refer to my github "Selenium-webscraping-/blob/master/bitmex_data.py" for downloading the csv files from Bitmex"
 
+CREATE DATABASE tradedata;
+
+CREATE EXTENSION timescaledb
+    VERSION "2.1.0";
+
 DROP TABLE IF EXISTS digital_assets;
 CREATE TABLE digital_assets (
     id SERIAL PRIMARY KEY,
