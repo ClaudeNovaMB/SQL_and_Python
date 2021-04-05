@@ -32,7 +32,7 @@ CREATE TABLE bitmex_trades (
     size INTEGER NOT NULL,
     price NUMERIC,
     tick_direction TEXT NOT NULL,
-    gross INTEGER NOT NULL,
+    gross BIGINT NOT NULL,
     home_notional NUMERIC,
     foreign_notional NUMERIC,
     PRIMARY KEY (timestamp, symbol_id),
