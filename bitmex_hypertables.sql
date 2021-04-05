@@ -35,7 +35,7 @@ CREATE TABLE bitmex_trades (
     gross INTEGER NOT NULL,
     home_notional NUMERIC,
     foreign_notional NUMERIC,
-    PRIMARY KEY (tstamp, symbol_id),
+    PRIMARY KEY (timestamp, symbol_id),
     CONSTRAINT fk_dtrade FOREIGN KEY (symbol_id) REFERENCES digital_assets (id)
 );
 
